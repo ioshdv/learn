@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Meta tags base del Home -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Josh - Desarrollador Full Stack JavaScript especializado en Aplicaciones de Ecommerce.">
+  <meta name="keywords" content="desarrollador full stack, javascript, node.js, react, portafolio, ecommerce, freelance">
+  <meta name="author" content="Josh Desarrollador Full Stack">
+  <meta name="copyright" content="20253 Copyright of Josh">
+  <meta name="robots" content="index, follow">
+
+      <!-- Meta tags para Facebook -->
+    <meta property="og:title" content="Josh | Desarrollador Full Stack JS">
+    <meta property="og:description" content="Portfolio Profesional de Josh - Desarrollador Full Stack Javascript">
+    <meta property="og:image" content="https://www.miportfoliojoshtop.net/assets/img/og-image.svg">
+    <meta property="og:url" content="https://www.miportfoliojoshtop.net">
+
+    <!-- Meta tags para Twitter -->
+    <meta name="twitter:title" content="Josh | Desarrollador Full Stack JS">
+    <meta name="twitter:description" content="Portfolio Profesional de Josh - Desarrollador Full Stack Javascript">
+    <meta name="twitter:image" content="https://www.miportfoliojoshtop.net/assets/img/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Meta tags para LinkedIn -->
+    <meta property="og:title" content="Josh | Desarrollador Full Stack JS">
+    <meta property="og:description" content="Portfolio Profesional de Josh - Desarrollador Full Stack Javascript">
+    <meta property="og:image" content="https://www.miportfoliojoshtop.net/assets/img/og-image.svg">
+    <meta property="og:url" content="https://www.miportfoliojoshtop.net">
+    <meta property="og:type" content="website">
+ 
+   <!-- Google Fonts – Cabin (texto) + Lobster (títulos decorativos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&family=Lobster&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+
+  <title>Josh | Portfolio Desarrollador Full Stack JavaScript</title>
+  
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Josh</h1>
+      <p class="subtitle">Desarrollador Full Stack Javascript</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre Mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container">
+        <h2>¡Hola! Soy Josh</h2>
+        <p>Desarrollo de Aplicaciones web escalables a la medida, especialista en Software - Ecommerce.</p>
+        <a href="#contacto" class="btn-primary">Trabajemos juntos</a>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="container">
+      <h2>Sobre Mí</h2>
+      
+      <div class="about-text">
+        <p>Soy un desarrollador Full Stack apasionado por JavaScript con más de 4 años de experiencia creando Software desde el requerimiento del Cliente hasta su puesta en Producción.</p>
+        
+        <p>Dentro de la tecnología que forma parte de mi Stack, me especializo en el ecosistema JavaScript: <strong>Node.js</strong> en el backend, <strong>React</strong> (y Next.js) en el frontend, y bases de datos como PostgreSQL, entre otras tecnologías.</p>
+        
+        <p>Me encanta entregar productos que realmente aporten valor del negocio y puedan evolucionar acorde a las necesidades del mercado.</p>
+      </div>
+
+      <div class="skills">
+        <h3>Mi Stack de trabajo:</h3>
+        <ul>
+          <li>JavaScript / TypeScript</li>
+          <li>React · Next.js</li>
+          <li>Node.js · Express · NestJS</li>
+          <li>PostgreSQL</li>
+          <li>Git · Docker · AWS</li>
+          <li>Tailwind · Bootstrap · CSS</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <div class="container">
+        <h2>Experiencia y Productos destacados</h2>
+        <div class="proyectos-grid">
+          <article class="proyecto">
+            <h3>Tienda E-commerce</h3>
+            <p>Aplicación web de comercio electrónico para una empresa que necesitaba aumentar sus ventas, pasando de una tienda física a una digital en Internet con un Ecommerce.</p>
+            <p><strong>Tecnologías:</strong> Next.js, Node.js, Transbank, PostgreSQL, Prisma</p>
+          </article>
+          <article class="proyecto">
+            <h3>Aplicación de Inventarios</h3>
+            <p>Aplicación web para gestionar un inventario, solución que desarrollé para una ferretería.</p>
+            <p><strong>Tecnologías:</strong> React, Express, PostgreSQL</p>
+          </article>
+          <article class="proyecto">
+            <h3>API REST para App Móvil</h3>
+            <p>Backend con autenticación JWT para una empresa financiera.</p>
+            <p><strong>Tecnologías:</strong> Node.js, Express, JWT, Swagger, Jest</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <div class="container">
+        <h2>Contacto</h2>
+        <p>¿Tienes un proyecto en mente? ¡Hablemos ahora!</p>
+        <form>
+          <div class="form-grid">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" required minlength="2">
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="asunto">Asunto *</label>
+            <select id="asunto" name="asunto" required>
+              <option value="" disabled selected>Elige una opción</option>
+              <option value="proyecto">Nuevo proyecto</option>
+              <option value="colaboracion">Colaboración</option>
+              <option value="empleo">Oportunidad laboral</option>
+              <option value="otro">Otro</option>
+            </select>
+
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" rows="6" required minlength="10" placeholder="Cuéntame sobre tu idea..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Josh. Todos los derechos reservados.</p>
+      <p>
+        <a href="https://github.com/tuusuario" target="_blank">GitHub</a> • 
+        <a href="https://linkedin.com/in/tuusuario" target="_blank">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
