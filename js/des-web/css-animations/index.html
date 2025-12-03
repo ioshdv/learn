@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Administrativo - Ventas</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <h2 class="logo">Ventas</h2>
+    <nav class="menu">
+      <a class="menu-item active" href="#">Inicio</a>
+      <a class="menu-item" href="#">Reportes</a>
+      <a class="menu-item" href="#">Productos</a>
+      <a class="menu-item" href="#">Usuarios</a>
+    </nav>
+  </aside>
+
+  <!-- Contenido principal -->
+  <div class="main">
+    <header class="header">
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      <h1>Dashboard de Ventas</h1>
+
+      <button class="theme-toggle" id="theme-toggle">🌓</button>
+    </header>
+
+    <!-- Cards -->
+    <section class="cards">
+      <div class="card">
+        <h3>Ventas Hoy</h3>
+        <p class="value">$ 1,250</p>
+        <div class="mini-chart"></div>
+      </div>
+
+      <div class="card">
+        <h3>Nuevos Clientes</h3>
+        <p class="value">23</p>
+        <div class="mini-chart"></div>
+      </div>
+
+      <div class="card">
+        <h3>Tickets Abiertos</h3>
+        <p class="value">12</p>
+        <div class="mini-chart"></div>
+      </div>
+    </section>
+
+    <!-- Gráfico -->
+    <section class="chart-area">
+      <h2>Ventas Semanales</h2>
+      <div class="bar-chart">
+        <div class="bar" style="height: 40%"></div>
+        <div class="bar" style="height: 60%"></div>
+        <div class="bar" style="height: 50%"></div>
+        <div class="bar" style="height: 70%"></div>
+        <div class="bar" style="height: 90%"></div>
+        <div class="bar" style="height: 65%"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
