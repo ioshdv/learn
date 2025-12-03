@@ -1,0 +1,622 @@
+/* ---------------------------------------------------- */
+/* 1. Variables y Reset Básico (Modo Claro por defecto) */
+/* ---------------------------------------------------- */
+:root {
+  /* Colores */
+  --color-primario: #007bff;
+  --color-secundario: #6c757d;
+  --color-texto: #343a40;
+  --color-fondo: #f8f9fa;
+  --color-fondo-panel: #ffffff;
+  --color-borde: #dee2e6;
+  --color-sombra: rgba(0, 0, 0, 0.1);
+  --color-hover: #e9ecef;
+  --color-progreso: #28a745;
+  --color-error: #dc3545;
+
+  /* Colores Tarea */
+  --prioridad-alta: #dc3545; /* Rojo */
+  --prioridad-media: #ffc107; /* Amarillo */
+  --prioridad-baja: #28a745; /* Verde */
+
+  /* Tipografía y Espaciado */
+  --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --espaciado-base: 1.5rem;
+  --borde-radio: 0.5rem;
+
+  /* Transiciones */
+  --transicion-rapida: 0.2s ease-out;
+}
+
+/* Modo Oscuro - Se aplica cuando el <body> tiene la clase .modo-oscuro */
+body.modo-oscuro {
+  --color-texto: #f8f9fa;
+  --color-fondo: #212529;
+  --color-fondo-panel: #343a40;
+  --color-borde: #495057;
+  --color-sombra: rgba(255, 255, 255, 0.05);
+  --color-hover: #495057;
+  --color-primario: #0099ff; /* Azul más brillante en oscuro */
+}
+
+/* Reset y Estilos Globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  transition: background-color var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  color: inherit;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+
+/* ---------------------------------------------------- */
+/* 2. Layout Principal (Mobile-First y Responsivo) */
+/* ---------------------------------------------------- */
+
+.contenedor-header,
+.contenido-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espaciado-base);
+}
+
+/* Header */
+.header-principal {
+  background-color: var(--color-fondo-panel);
+  border-bottom: 1px solid var(--color-borde);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px var(--color-sombra);
+  position: sticky; /* Sticky header */
+  top: 0;
+  z-index: 100;
+}
+
+.contenedor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilos de Botones Generales */
+.btn-primario,
+.btn-secundario,
+.btn-toggle {
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--borde-radio);
+  font-weight: 600;
+  transition: all var(--transicion-rapida);
+  font-size: 1rem;
+}
+
+.btn-primario {
+  background-color: var(--color-primario);
+  color: white;
+}
+
+.btn-primario:hover {
+  background-color: #0056b3; /* Tono más oscuro */
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  background-color: var(--color-secundario);
+  color: white;
+}
+
+.btn-secundario:hover {
+  background-color: #5a6268; /* Tono más oscuro */
+  transform: translateY(-2px);
+}
+
+.btn-toggle {
+  padding: 0.5rem;
+  background-color: var(--color-borde);
+  color: var(--color-texto);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.btn-toggle:hover {
+  background-color: var(--color-hover);
+}
+
+/* Contenido Principal - Layout para Móviles (Apilado) */
+.contenido-principal {
+  padding-top: var(--espaciado-base);
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-base);
+}
+
+/* Uso de CSS Grid para las estadísticas (layout de una sola columna en móvil) */
+.grid-estadisticas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado-base);
+}
+
+/* Diseño principal: Tareas y Pomodoro (se apilan en móvil) */
+.grid-principal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-base);
+}
+
+/* Media Query para Tablet y Desktop (Responsivo con CSS Grid) */
+@media (min-width: 768px) {
+  .grid-estadisticas {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
+  }
+
+  .grid-principal {
+    display: grid;
+    /* Tareas (2/3) | Pomodoro (1/3) */
+    grid-template-columns: 2fr 1fr; 
+    gap: 2rem;
+  }
+}
+
+/* Estilos de Paneles/Tarjetas */
+.tarjeta-estadistica,
+.panel-tareas,
+.panel-pomodoro,
+.progreso-semanal {
+  background-color: var(--color-fondo-panel);
+  padding: var(--espaciado-base);
+  border-radius: var(--borde-radio);
+  box-shadow: 0 4px 6px var(--color-sombra);
+  transition: box-shadow var(--transicion-rapida);
+}
+
+/* Tarjeta de Estadísticas */
+.tarjeta-estadistica h3 {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin-bottom: 0.25rem;
+}
+
+.numero-estadistica {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+/* ---------------------------------------------------- */
+/* 3. Estilos de Tareas y Filtros */
+/* ---------------------------------------------------- */
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--espaciado-base);
+}
+
+/* Filtros */
+.filtros-tareas {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: var(--espaciado-base);
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: 0.5rem;
+}
+
+.filtros-tareas button {
+  padding: 0.5rem 1rem;
+  border-radius: var(--borde-radio);
+  opacity: 0.7;
+  transition: opacity var(--transicion-rapida), background-color var(--transicion-rapida);
+}
+
+.filtros-tareas button:hover {
+  opacity: 1;
+}
+
+.filtros-tareas .filtro-activo {
+  background-color: var(--color-primario);
+  color: white;
+  opacity: 1;
+}
+
+/* Items de Tarea */
+.item-tarea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-borde);
+  transition: background-color var(--transicion-rapida), opacity 0.5s ease-out;
+  animation: fadeIn 0.3s ease-out; /* Animación de entrada */
+}
+
+/* Animación de salida (se aplica con JS) */
+.item-tarea.eliminando {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.item-tarea:last-child {
+  border-bottom: none;
+}
+
+.item-tarea:hover {
+  background-color: var(--color-hover);
+}
+
+.contenido-tarea {
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1;
+  gap: 1rem;
+}
+
+.checkbox-tarea {
+  margin-top: 0.25rem;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-primario);
+}
+
+.detalles-tarea {
+  flex-grow: 1;
+}
+
+.titulo-tarea {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.descripcion-tarea {
+  font-size: 0.9rem;
+  color: var(--color-secundario);
+  margin-top: 0.25rem;
+}
+
+/* Tarea Completada */
+.item-tarea.completada .titulo-tarea,
+.item-tarea.completada .descripcion-tarea {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Meta Data */
+.meta-tarea {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.prioridad {
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+}
+
+.prioridad-alta { background-color: var(--prioridad-alta); color: white; }
+.prioridad-media { background-color: var(--prioridad-media); color: var(--color-texto); }
+.prioridad-baja { background-color: var(--prioridad-baja); color: white; }
+
+.fecha-limite {
+  color: var(--color-secundario);
+}
+
+.btn-eliminar {
+  color: var(--color-error);
+  font-size: 1.2rem;
+  opacity: 0.6;
+  transition: opacity var(--transicion-rapida);
+  min-width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-eliminar:hover {
+  opacity: 1;
+  color: var(--color-error);
+}
+
+/* ---------------------------------------------------- */
+/* 4. Estilos del Pomodoro (Animación de Progreso) */
+/* ---------------------------------------------------- */
+
+.temporizador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.circulo-temporizador {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* SVG para la animación de progreso */
+.progreso-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Iniciar el stroke desde la parte superior */
+}
+
+.progreso-bg {
+    fill: none;
+    stroke: var(--color-borde);
+    stroke-width: 8;
+}
+
+.progreso-relleno {
+    fill: none;
+    stroke: var(--color-primario);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s linear; /* Transición suave de 1s */
+}
+
+.tiempo-restante {
+  font-size: 3.5rem;
+  font-weight: 700;
+  z-index: 1;
+  transition: color var(--transicion-rapida);
+}
+
+/* Controles */
+.controles-temporizador {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Modos */
+.modo-temporizador {
+  display: flex;
+  background-color: var(--color-borde);
+  padding: 0.25rem;
+  border-radius: var(--borde-radio);
+}
+
+.modo-temporizador button {
+  padding: 0.5rem 1rem;
+  border-radius: calc(var(--borde-radio) - 0.25rem);
+  font-weight: 600;
+  transition: background-color var(--transicion-rapida), color var(--transicion-rapida);
+  color: var(--color-texto);
+}
+
+.modo-temporizador button.modo-activo {
+  background-color: var(--color-fondo-panel);
+  box-shadow: 0 2px 4px var(--color-sombra);
+}
+
+.sesiones-completadas {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------------------------------------------------- */
+/* 5. Estilos de Gráfico Semanal */
+/* ---------------------------------------------------- */
+
+.grafico-semanal {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  border-bottom: 2px solid var(--color-borde);
+  padding-bottom: 0.5rem;
+  gap: 0.5rem;
+}
+
+.barra-dia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 12%; /* Distribución uniforme */
+}
+
+.barra-progreso {
+  width: 100%;
+  background-color: var(--color-primario);
+  border-radius: 0.25rem 0.25rem 0 0;
+  transition: height 0.5s ease-out; /* Animación de altura */
+}
+
+.barra-dia.activo .barra-progreso {
+  background-color: var(--color-progreso); /* Barra de hoy destacada */
+}
+
+.etiqueta-dia {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* ---------------------------------------------------- */
+/* 6. Modal y Formularios */
+/* ---------------------------------------------------- */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.modal.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-contenido {
+  background-color: var(--color-fondo-panel);
+  padding: 2rem;
+  border-radius: var(--borde-radio);
+  max-width: 90%;
+  width: 450px;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 10px 20px var(--color-sombra);
+}
+
+.modal.visible .modal-contenido {
+  transform: scale(1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.btn-cerrar {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--color-secundario);
+  transition: color var(--transicion-rapida);
+}
+
+.btn-cerrar:hover {
+  color: var(--color-error);
+}
+
+/* Formularios */
+.campo-formulario {
+  margin-bottom: 1rem;
+}
+
+.campo-formulario label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.campo-formulario input[type="text"],
+.campo-formulario input[type="date"],
+.campo-formulario select,
+.campo-formulario textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--borde-radio);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  transition: border-color var(--transicion-rapida), box-shadow var(--transicion-rapida);
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+  border-color: var(--color-primario);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.acciones-modal {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.error-mensaje {
+  color: var(--color-error);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  min-height: 1rem;
+}
+
+/* ---------------------------------------------------- */
+/* 7. Notificaciones Flotantes (Feedback Visual) */
+/* ---------------------------------------------------- */
+
+#contenedor-notificaciones {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column-reverse; /* Las nuevas aparecen en la parte inferior */
+  gap: 0.5rem;
+}
+
+.notificacion {
+  background-color: var(--color-progreso); /* Color de éxito por defecto */
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: var(--borde-radio);
+  box-shadow: 0 4px 12px var(--color-sombra);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.notificacion.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animación de entrada (reutilizada) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-secundario);
+  font-style: italic;
+  animation: fadeIn 0.5s ease-out;
+}
