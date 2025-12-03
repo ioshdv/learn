@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Okidoki! Mi Gestor de Mis Tareas</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="contenedor">
+    <header>
+      <h1>📝 Okidoki! Mis Tareas</h1>
+      <div class="header-actions">
+        <button id="btn-toggle-theme" class="btn btn-icon" title="Modo Oscuro/Claro">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number" id="total-tareas">0</span>
+          <span>Total</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" id="tareas-completadas">0</span>
+          <span>Completadas</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" id="tareas-pendientes">0</span>
+          <span>Pendientes</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="controles">
+      <div class="busqueda-exportacion">
+        <input type="text" id="input-busqueda" placeholder="Buscar tareas..." maxlength="50">
+        <select id="select-categoria">
+          <option value="">Todas las Categorías</option>
+          <option value="Personal">Personal</option>
+          <option value="Trabajo">Reuniones</option>
+          <option value="Estudio">Proyectos</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <div class="exportar-group">
+          <button class="btn btn-primary" id="btn-export-json">Exportar JSON</button>
+          <button class="btn btn-primary" id="btn-export-csv">Exportar CSV</button>
+        </div>
+      </div>
+
+      <form class="formulario-agregar" id="form-agregar">
+        <div class="form-group">
+          <input type="text" id="input-tarea" placeholder="Escribe una nueva tarea..." maxlength="100" required>
+          <select id="input-categoria">
+            <option value="Personal">Personal</option>
+            <option value="Trabajo">Reuniones</option>
+            <option value="Estudio">Proyectos</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <button type="submit" class="btn btn-primary" id="btn-agregar">Agregar</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="filtros">
+      <button class="filtro-btn active" data-filtro="todas">Todas</button>
+      <button class="filtro-btn" data-filtro="pendientes">Pendientes</button>
+      <button class="filtro-btn" data-filtro="completadas">Completadas</button>
+      <button type="button" class="btn btn-danger btn-small" id="btn-limpiar-completadas">Limpiar Completadas</button>
+    </div>
+
+    <div class="lista-tareas" id="lista-tareas">
+      <div class="empty-state">
+        <h3>¡No hay tareas!</h3>
+        <p>Agregar tarea o filtrar.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
