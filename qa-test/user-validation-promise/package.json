@@ -1,0 +1,9 @@
+{
+  "name": "user-validation-promise",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app/index.js"
+  },
+  "dependencies": {}
+}
