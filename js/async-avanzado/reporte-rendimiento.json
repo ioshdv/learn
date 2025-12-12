@@ -1,0 +1,175 @@
+{
+  "generatedAt": "2025-12-12T21:16:31.320Z",
+  "config": {
+    "concurrency": 3,
+    "delayBetweenRequests": 100,
+    "maxRetries": 2,
+    "baseRetryDelay": 300,
+    "requestTimeout": 4000,
+    "outputReportJson": "./reporte-rendimiento.json",
+    "outputReportCsv": "./reporte-rendimiento.csv"
+  },
+  "summary": {
+    "total": 10,
+    "success": 7,
+    "failed": 3,
+    "avgTimeMs": 459,
+    "attempts": {
+      "min": 1,
+      "max": 3,
+      "avg": 2
+    }
+  },
+  "details": [
+    {
+      "url": "https://jsonplaceholder.typicode.com/posts/1",
+      "ok": true,
+      "duration": 616,
+      "attempt": 1,
+      "status": 200,
+      "snippet": "{\"userId\":1,\"id\":1,\"title\":\"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\"body\":\"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molest",
+      "body": {
+        "userId": 1,
+        "id": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+      }
+    },
+    {
+      "url": "https://jsonplaceholder.typicode.com/posts/2",
+      "ok": true,
+      "duration": 572,
+      "attempt": 1,
+      "status": 200,
+      "snippet": "{\"userId\":1,\"id\":2,\"title\":\"qui est esse\",\"body\":\"est rerum tempore vitae\\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\\nfugiat blanditiis voluptate porro vel nihil molestiae ut reicie",
+      "body": {
+        "userId": 1,
+        "id": 2,
+        "title": "qui est esse",
+        "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+      }
+    },
+    {
+      "url": "https://jsonplaceholder.typicode.com/posts/3",
+      "ok": true,
+      "duration": 572,
+      "attempt": 1,
+      "status": 200,
+      "snippet": "{\"userId\":1,\"id\":3,\"title\":\"ea molestias quasi exercitationem repellat qui ipsa sit aut\",\"body\":\"et iusto sed quo iure\\nvoluptatem occaecati omnis eligendi aut ad\\nvoluptatem doloribus vel accusantium",
+      "body": {
+        "userId": 1,
+        "id": 3,
+        "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+        "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+      }
+    },
+    {
+      "url": "https://jsonplaceholder.typicode.com/posts/4",
+      "ok": true,
+      "duration": 239,
+      "attempt": 1,
+      "status": 200,
+      "snippet": "{\"userId\":1,\"id\":4,\"title\":\"eum et est occaecati\",\"body\":\"ullam et saepe reiciendis voluptatem adipisci\\nsit amet autem assumenda provident rerum culpa\\nquis hic commodi nesciunt rem tenetur doloremqu",
+      "body": {
+        "userId": 1,
+        "id": 4,
+        "title": "eum et est occaecati",
+        "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+      }
+    },
+    {
+      "url": "https://jsonplaceholder.typicode.com/posts/5",
+      "ok": true,
+      "duration": 257,
+      "attempt": 1,
+      "status": 200,
+      "snippet": "{\"userId\":1,\"id\":5,\"title\":\"nesciunt quas odio\",\"body\":\"repudiandae veniam quaerat sunt sed\\nalias aut fugiat sit autem sed est\\nvoluptatem omnis possimus esse voluptatibus quis\\nest aut tenetur dolor",
+      "body": {
+        "userId": 1,
+        "id": 5,
+        "title": "nesciunt quas odio",
+        "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+      }
+    },
+    {
+      "url": "https://jsonplaceholder.typicode.com/posts/100",
+      "ok": true,
+      "duration": 284,
+      "attempt": 1,
+      "status": 200,
+      "snippet": "{\"userId\":10,\"id\":100,\"title\":\"at nam consequatur ea labore ea harum\",\"body\":\"cupiditate quo est a modi nesciunt soluta\\nipsa voluptas error itaque dicta in\\nautem qui minus magnam et distinctio eum\\n",
+      "body": {
+        "userId": 10,
+        "id": 100,
+        "title": "at nam consequatur ea labore ea harum",
+        "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
+      }
+    },
+    {
+      "url": "https://jsonplaceholder.typicode.com/invalid-url",
+      "ok": false,
+      "duration": 176,
+      "attempt": 3,
+      "error": "HTTP 404 - {}"
+    },
+    {
+      "url": "https://httpstat.us/200?sleep=2000",
+      "ok": false,
+      "duration": 875,
+      "attempt": 3,
+      "error": "fetch failed"
+    },
+    {
+      "url": "https://httpstat.us/503",
+      "ok": false,
+      "duration": 824,
+      "attempt": 3,
+      "error": "fetch failed"
+    },
+    {
+      "url": "https://jsonplaceholder.typicode.com/comments?postId=1",
+      "ok": true,
+      "duration": 173,
+      "attempt": 1,
+      "status": 200,
+      "snippet": "[{\"postId\":1,\"id\":1,\"name\":\"id labore ex et quam laborum\",\"email\":\"Eliseo@gardner.biz\",\"body\":\"laudantium enim quasi est quidem magnam voluptate ipsam eos\\ntempora quo necessitatibus\\ndolor quam autem",
+      "body": [
+        {
+          "postId": 1,
+          "id": 1,
+          "name": "id labore ex et quam laborum",
+          "email": "Eliseo@gardner.biz",
+          "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+        },
+        {
+          "postId": 1,
+          "id": 2,
+          "name": "quo vero reiciendis velit similique earum",
+          "email": "Jayne_Kuhic@sydney.com",
+          "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+        },
+        {
+          "postId": 1,
+          "id": 3,
+          "name": "odio adipisci rerum aut animi",
+          "email": "Nikita@garfield.biz",
+          "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+        },
+        {
+          "postId": 1,
+          "id": 4,
+          "name": "alias odio sit",
+          "email": "Lew@alysha.tv",
+          "body": "non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati"
+        },
+        {
+          "postId": 1,
+          "id": 5,
+          "name": "vero eaque aliquid doloribus et culpa",
+          "email": "Hayden@althea.biz",
+          "body": "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et"
+        }
+      ]
+    }
+  ]
+}
