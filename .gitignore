@@ -1,0 +1,19 @@
+# Node modules
+backend-nodejs/sistema-modular/node_modules/
+
+# Archivos de log
+*.log
+
+# Carpeta de datos generados
+backend-nodejs/sistema-modular/data/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración del editor
+.vscode/
+.idea/
+
+# Archivos temporales Linux/WSL
+*~
