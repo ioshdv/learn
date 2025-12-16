@@ -1,12 +1,12 @@
 {
-  "name": "test-title-website",
+  "name": "cypress-first-login",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "First Cypress E2E login test",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
-  "keywords": [],
+  "keywords": ["cypress", "e2e", "login"],
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
