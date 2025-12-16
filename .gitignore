@@ -1,33 +1,39 @@
-# Dependencias de Node.js (cubre todos los proyectos)
+# Dependencias de Node.js
 node_modules/
 **/node_modules/
 
-# Archivos de log generados
+# Archivos de log
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Carpetas con datos generados por las tareas
-data/              # Usado en sistema-modular
-demo-archivos/     # Archivos de entrada en sistema-archivos
-archivos/          # Carpeta base alternativa en sistema-archivos
-procesados/        # Estadísticas y archivos procesados
-errores/           # Archivos fallidos y logs de error
-backup/            # Copias de seguridad automáticas
+# Archivos generados por tareas
+data/
+demo-archivos/
+archivos/
+procesados/
+errores/
+backup/
 
 # Archivos JSON generados (reportes, stats)
 *.json
 !package.json
 
 # Archivos temporales del sistema operativo
-.DS_Store          # macOS
-Thumbs.db          # Windows
+.DS_Store
+Thumbs.db
 
 # Configuración de editores e IDEs
 .vscode/
 .idea/
 *.sublime-workspace
 
-# Archivos temporales/backups de editores
-*~
+# Archivos generados por Cypress
+cypress/videos/
+cypress/screenshots/
+.cypress/
+.cache/
+
+# Instalador descargado de Chrome (opcional)
+google-chrome-stable_current_amd64.deb
