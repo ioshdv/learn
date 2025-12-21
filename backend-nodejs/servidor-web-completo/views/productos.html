@@ -1,0 +1,24 @@
+<section class="catalog-page">
+    <header class="catalog-header-main">
+        <h2>Nuestros Productos</h2>
+        <p class="catalog-count">Mostrando <strong>{{productos.length}}</strong> productos encontrados</p>
+    </header>
+
+    <div class="productos-grid">
+        {{#each productos}}
+        <article class="producto-card">
+            <div class="producto-icon">📦</div>
+            
+            <div class="producto-info">
+                <h3 class="producto-nombre">{{nombre}}</h3>
+                <p class="producto-precio">${{precio}}</p>
+                <p class="producto-categoria">Categoría: {{categoria}}</p>
+                
+                <footer class="producto-actions">
+                    <a href="/productos/{{id}}" class="btn btn-details">Ver Detalles</a>
+                </footer>
+            </div>
+        </article>
+        {{/each}}
+    </div>
+</section>

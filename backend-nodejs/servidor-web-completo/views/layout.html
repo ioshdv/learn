@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>StoreNode</title>
+</head>
+<body>
+    <header>
+        <h2 onclick="window.location='/'" style="cursor:pointer">StoreNode</h2>
+        <div class="auth-box">
+            {{#if user}}
+                <span>👤 {{user}}</span> | <a href="/logout" style="color:white">Salir</a>
+            {{else}}
+                <input type="text" id="user" placeholder="Usuario">
+                <input type="password" id="pass" placeholder="Clave">
+                <button id="login-btn">Entrar</button>
+            {{/if}}
+        </div>
+    </header>
+    <main>{{{content}}}</main>
+    
+    <script>
+        const loginBtn = document.getElementById('login-btn');
+        const userInp = document.getElementById('user');
+        const passInp = document.getElementById('pass');
+
+        const ejecutarLogin = async () => {
+            const user = userInp.value;
+            const pass = passInp.value;
+            const res = await fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ user, pass })
+            });
+            if (res.ok) window.location.reload();
+            else alert('Credenciales incorrectas');
+        };
+
+        if (loginBtn) {
+            loginBtn.onclick = ejecutarLogin;
+            // ESCUCHAR TECLA ENTER
+            [userInp, passInp].forEach(input => {
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') ejecutarLogin();
+                });
+            });
+        }
+    </script>
+</body>
+</html>

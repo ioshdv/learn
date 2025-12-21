@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "nombre": "Laptop Gaming",
+    "precio": 1200,
+    "categoria": "Electrónica",
+    "descripcion": "Potente laptop con pantalla de 144Hz y tarjeta RTX 4060.",
+    "imagen": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=500&q=80",
+    "comentarios": []
+  },
+  {
+    "id": 2,
+    "nombre": "Mouse Inalámbrico",
+    "precio": 50,
+    "categoria": "Accesorios",
+    "descripcion": "Mouse ergonómico con sensor óptico de 16000 DPI.",
+    "imagen": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=500&q=80",
+    "comentarios": [
+      {
+        "usuario": "admin",
+        "texto": "Comentario para poner a prueba esta funcionalidad."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Teclado Mecánico",
+    "precio": 100,
+    "categoria": "Accesorios",
+    "descripcion": "Teclado RGB con switches red para máxima velocidad.",
+    "imagen": "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=500&q=80",
+    "comentarios": []
+  }
+]
