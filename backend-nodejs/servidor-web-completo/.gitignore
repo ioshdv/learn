@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# User Sessions
+sessions/*.json
+sessions/*.bin
+
+# File Uploads
+public/images/uploads/*
+!public/images/uploads/.gitkeep
+
+# Logs and Debugging
+*.log
+npm-debug.log*
+
+# System Files
+.DS_Store
+Thumbs.db

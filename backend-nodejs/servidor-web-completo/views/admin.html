@@ -1,0 +1,48 @@
+<section class="admin-panel">
+    <header class="admin-header-inline">
+        <h2>Panel de Administración</h2>
+        <div class="admin-welcome">
+            <span>Bienvenido, <strong>{{user.username}}</strong></span>
+            <button id="logout-btn-admin" class="btn btn-logout-alt">Cerrar sesión</button>
+        </div>
+    </header>
+
+    <div class="admin-grid">
+        <article class="admin-card">
+            <h3>Agregar Nuevo Producto</h3>
+            <form action="/admin/productos" method="POST" enctype="multipart/form-data" class="form-admin">
+                <div class="form-group">
+                    <input type="text" name="nombre" placeholder="Nombre del producto" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="precio" placeholder="Precio" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="categoria" placeholder="Categoría" required>
+                </div>
+                <div class="form-group file-input-group">
+                    <label for="imagen">Imagen del producto</label>
+                    <input type="file" id="imagen" name="imagen" accept="image/*">
+                </div>
+                <button type="submit" class="btn btn-success-full">Guardar Producto</button>
+            </form>
+        </article>
+
+        <article class="admin-card">
+            <h3>Inventario Actual</h3>
+            <div class="admin-list">
+                {{#each productos}}
+                    <div class="admin-list-item">
+                        <div class="item-info">
+                            <span class="item-name">{{nombre}}</span>
+                            <span class="item-meta">${{precio}} | {{categoria}}</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn-icon">🗑️</button>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </article>
+    </div>
+</section>

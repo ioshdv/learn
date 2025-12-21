@@ -1,0 +1,15 @@
+{
+  "name": "servidor-web-completo",
+  "version": "1.0.0",
+  "description": "Web server with session authentication, product comments, caching, and performance metrics",
+  "main": "server.js",
+  "scripts": {
+    "test": "node --test test.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {}
+}

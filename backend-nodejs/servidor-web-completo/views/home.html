@@ -1,0 +1,24 @@
+<h1 style="text-align:center; margin-bottom:20px;">Catálogo</h1>
+<div class="product-grid">
+    {{#each productos}}
+    <div class="card">
+        <img src="{{this.imagen}}">
+        <h3>{{nombre}}</h3>
+        <p>${{precio}}</p>
+        <a href="/productos/{{id}}" class="btn">Ver Detalles</a>
+    </div>
+    {{/each}}
+</div>
+
+{{#if user}}
+<hr style="margin:40px 0;">
+<div style="background:#f9f9f9; padding:20px; border-radius:10px; border:2px dashed #ccc;">
+    <h3>Nuevo Producto (Upload)</h3>
+    <form action="/api/upload" method="POST" enctype="multipart/form-data">
+        <input type="text" name="nombre" placeholder="Nombre" required><br><br>
+        <input type="number" name="precio" placeholder="Precio" required><br><br>
+        <input type="file" name="imagen" accept="image/*" required><br><br>
+        <button type="submit" class="btn" style="background:#27ae60;">Subir Producto</button>
+    </form>
+</div>
+{{/if}}
