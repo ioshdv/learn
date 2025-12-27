@@ -1,0 +1,12 @@
+[2025-12-27T12:23:17.214Z] GET / - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+[2025-12-27T12:25:43.243Z] GET /api/tareas - User-Agent: curl/8.5.0
+[2025-12-27T12:25:55.656Z] GET /api/tareas?q=Express&cat=estudio&op=and - User-Agent: curl/8.5.0
+[2025-12-27T12:26:07.644Z] GET /api/stats/productividad - User-Agent: curl/8.5.0
+[2025-12-27T12:26:20.082Z] GET /api/tareas?op=invalid_op - User-Agent: curl/8.5.0
+[2025-12-27T12:27:58.158Z] GET /api/tareas?op=invalido - User-Agent: curl/8.5.0
+[2025-12-27T12:28:45.594Z] GET /api/tareas?op=invalid_operator - User-Agent: curl/8.5.0
+[2025-12-27T12:28:48.032Z] GET /api/tareas?op=invalid_operator - User-Agent: curl/8.5.0
+[2025-12-27T12:30:29.203Z] GET /api/tareas?op=invalid_operator - User-Agent: curl/8.5.0
+[2025-12-27T12:31:01.074Z] GET /api/tareas?op=invalid_operator
+[2025-12-27T12:31:58.312Z] GET /api/tareas?q=Express&cat=trabajo&op=or
+[2025-12-27T12:32:12.902Z] GET /api/tareas?q=Express&cat=trabajo&op=and
