@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": "17ba2f24-9643-4b1f-9697-8455cdd3a2f1",
+      "title": "Sin título",
+      "content": "",
+      "category": "General",
+      "author": "admin",
+      "likes": 0,
+      "createdAt": "2025-12-28T19:09:53.031Z"
+    },
+    {
+      "id": "b343668c-fba5-4143-95fb-d6c669757a44",
+      "title": "Mastering JavaScript",
+      "content": "Aprende sobre clausuras y prototipos",
+      "category": "Programacion",
+      "author": "admin",
+      "likes": 0,
+      "createdAt": "2025-12-28T19:10:17.171Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "cff92b41-f208-42e1-9430-674ebe656489",
+      "postId": "b343668c-fba5-4143-95fb-d6c669757a44",
+      "username": "admin",
+      "content": "Excelente artículo sobre clausuras.",
+      "status": "approved",
+      "createdAt": "2025-12-28T19:10:47.951Z"
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "username": "autor",
+      "password": "autor123",
+      "role": "author"
+    }
+  ]
+}
