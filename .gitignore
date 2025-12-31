@@ -1,48 +1,52 @@
-# Dependencias de Node.js
+# --- DEPENDENCIES ---
 node_modules/
 **/node_modules/
 
-# Archivos de variables de entorno (SEGURIDAD)
+# --- SECURITY (Environment Variables) ---
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+**/.env*
 
-# Archivos de base de datos y logs
+# --- PRODUCTION / BUILD ---
+frontend-comunicacion/build/
+frontend-comunicacion/dist/
+out/
+
+# --- DATABASE AND LOGS ---
 db.json
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Archivos generados por tareas
+# --- SYSTEM FILES AND EDITORS ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# --- TASK AND TEMPORARY FOLDERS ---
 data/
 demo-archivos/
 archivos/
 procesados/
 errores/
 backup/
+.cache/
+.npm/
 
-# Archivos JSON (excepto configuración)
-*.json
-!package.json
-!package-lock.json
-
-# Archivos temporales del sistema operativo
-.DS_Store
-Thumbs.db
-
-# Configuración de editores e IDEs
-.vscode/
-.idea/
-*.sublime-workspace
-
-# Archivos generados por Cypress
+# --- TESTING ---
 cypress/videos/
 cypress/screenshots/
 .cypress/
-.cache/
+coverage/
 
-# Instaladores y otros
-google-chrome-stable_current_amd64.deb
+# --- INSTALLERS ---
+*.deb
+*.exe
+*.msi
