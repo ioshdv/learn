@@ -1,0 +1,106 @@
+.form-container {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #0070f3;
+  outline: none;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+}
+
+.success {
+  color: green;
+  font-size: 0.9rem;
+}
+
+.preview-img {
+  max-width: 100%;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.lista-productos {
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.producto-card {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.producto-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.producto-card button {
+  margin-left: auto;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.producto-card button:hover {
+  background-color: #d32f2f;
+}
+
+.producto-card {
+  background: white;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.producto-card:hover {
+  transform: translateY(-5px);
+}
+
+.pending {
+  border-style: dashed;
+  background-color: #fcfcfc;
+}
+
+.comentarios-section input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.comentarios-section button {
+  background-color: #34495e;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
