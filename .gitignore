@@ -36,3 +36,8 @@ Thumbs.db
 **/cypress/videos/
 **/cypress/screenshots/
 .eslintcache
+**/test-reports/
+
+# Media and Uploads
+uploads/*
+!uploads/.gitkeep
