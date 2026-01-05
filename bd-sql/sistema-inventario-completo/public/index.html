@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario Pro - Sistema Extendido</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <h1>📦 Panel de Control de Inventario</h1>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h2>🔍 Sistema de Códigos de Barras</h2>
+            <div class="search-box">
+                <input type="text" id="barcodeInput" placeholder="Escanee o escriba el código (ej: 1234567890123)...">
+                <button class="btn-secondary" onclick="UI.buscarPorBarcode()">Buscar Producto</button>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Barcode</th>
+                        <th>Producto</th>
+                        <th>Stock Actual</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-productos">
+                    </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>📝 Generar Orden de Compra</h2>
+            <form id="orderForm" onsubmit="UI.crearOrden(event)">
+                <div class="form-group">
+                    <label>Seleccionar Proveedor:</label>
+                    <select id="proveedorSelect" required>
+                        <option value="">Cargando proveedores...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Producto a Solicitar:</label>
+                    <select id="productoSelect" required>
+                        <option value="">Cargando productos...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Cantidad:</label>
+                    <input type="number" id="orderQty" min="1" value="10" required>
+                </div>
+                <button type="submit" class="btn-primary">Emitir Orden de Compra</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>🔄 Sincronización Externa (ERP)</h2>
+            <p>Obtenga los datos financieros agregados para sistemas contables.</p>
+            <button class="btn-secondary" onclick="UI.sincronizarERP()">Ejecutar Sincronización</button>
+            <pre id="erpOutput">// Los datos del ERP aparecerán aquí...</pre>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
