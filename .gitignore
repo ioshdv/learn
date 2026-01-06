@@ -36,6 +36,7 @@ Thumbs.db
 # Testing and Linters
 **/coverage/
 **/lcov-report/
+**/.jest-cache/
 **/cypress/videos/
 **/cypress/screenshots/
 .eslintcache
