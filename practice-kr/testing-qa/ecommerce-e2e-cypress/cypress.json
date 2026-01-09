@@ -1,0 +1,13 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "viewportWidth": 1280,
+  "viewportHeight": 720,
+  "video": true,
+  "screenshotOnRunFailure": true,
+  "retries": 2,
+  "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "cypress/results/junit-[hash].xml",
+    "toConsole": true
+  }
+}

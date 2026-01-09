@@ -1,8 +1,12 @@
+# =========================
 # Dependencies
+# =========================
 node_modules/
 **/node_modules/
 
-# Security and Environment Variables
+# =========================
+# Security and Environment
+# =========================
 .env
 .env.*
 !.env.example
@@ -10,14 +14,35 @@ node_modules/
 **/*.pem
 **/*.key
 
-# Production and Builds
+# =========================
+# Builds and Frameworks
+# =========================
 **/build/
 **/dist/
 **/out/
 **/.next/
 **/.cache/
 
-# Logs and Local Databases
+# =========================
+# Cypress
+# =========================
+**/.cache/Cypress/
+**/cypress/videos/
+**/cypress/screenshots/
+**/cypress/results/
+
+# =========================
+# Coverage & Reports
+# =========================
+**/coverage/
+**/lcov-report/
+**/test-reports/
+**/junit.xml
+reporte.txt
+
+# =========================
+# Logs & Local Data
+# =========================
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -25,25 +50,18 @@ yarn-error.log*
 *.db
 *.sqlite
 
-# System and IDEs
+# =========================
+# IDEs & System
+# =========================
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 *.sublime-workspace
-.swp
+*.swp
 
-# Testing and Linters
-**/coverage/
-**/lcov-report/
-**/.jest-cache/
-**/cypress/videos/
-**/cypress/screenshots/
-.eslintcache
-**/test-reports/
-**/junit.xml
-reporte.txt
-
+# =========================
 # Media and Uploads
+# =========================
 uploads/*
 !uploads/.gitkeep

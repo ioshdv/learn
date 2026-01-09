@@ -1,0 +1,16 @@
+{
+  "name": "ecommerce-e2e-cypress",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test:e2e": "cypress run --spec 'cypress/integration/**/*.spec.js'"
+  },
+  "devDependencies": {
+    "@cypress/code-coverage": "^3.10.0",
+    "cypress": "9.7.0",
+    "cypress-file-upload": "^5.0.8"
+  }
+}
