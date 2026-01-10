@@ -41,6 +41,11 @@ node_modules/
 reporte.txt
 
 # =========================
+# Node test artifacts
+# =========================
+.test-results/
+
+# =========================
 # Logs & Local Data
 # =========================
 *.log
