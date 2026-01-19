@@ -70,3 +70,20 @@ Thumbs.db
 # =========================
 uploads/*
 !uploads/.gitkeep
+
+# =========================
+# Monorepo / Local Exercises
+# =========================
+.husky/
+
+# Root-level Node artifacts (monorepo noise)
+package.json
+package-lock.json
+
+# Accidental generated files
+*BAK*
+devops-intro@*
+eslint
+jest
+next
+npm
